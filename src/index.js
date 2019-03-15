@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import renderNotes from './renderNotes.js'; 
 
 const RANDOM_JOKES_URL = 'https://api.chucknorris.io/jokes/random';
@@ -26,9 +28,8 @@ searchField.addEventListener('keyup', event => {
 });
 
 function getJoke() {
-  fetch(RANDOM_JOKES_URL)
-    .then(response => response.json() )
-    .then(pushJoke);
+  axios.get(RANDOM_JOKES_URL)
+    .then(response => pushJoke(response.data) );
 }
 
 function pushJoke(joke) {
@@ -45,6 +46,9 @@ function getRandomColor() {
 const NOTE_COLORS = [
   {backgroundColor: '#FF9640'}, 
   {backgroundColor: '#992667'}, 
-  {backgroundColor:'#46A229'}
+  {backgroundColor: '#46A229'},
+  {backgroundColor: '#34D1B2'},
+  {backgroundColor: '#FFEE40'},
+  {backgroundColor: '#FF4040'},
 ];
 

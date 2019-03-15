@@ -1,6 +1,5 @@
 let notesList = document.getElementsByClassName('notes-list')[0];
 
-
 export default function renderNotes(jokes) {
   notesList.innerHTML = '';
 
